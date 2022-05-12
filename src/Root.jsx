@@ -10,6 +10,7 @@ function Root() {
     <InstantSearch
       searchClient={searchClient}
       indexName={indexName}
+      routing={true}
     >
       <App />
     </InstantSearch>
