@@ -1,8 +1,9 @@
-import { useHits } from "react-instantsearch-hooks";
+import * as Algolia from "react-instantsearch-hooks";
+import { RestaurantCard } from "./RestaurantCard";
 
 // "Hits" are the results that match the query
 function HitContainer() {
-  const { hits } = useHits();
+  const { hits } = Algolia.useHits();
   const noResults = hits.length === 0;
   if (noResults) {
     return (
@@ -10,24 +11,20 @@ function HitContainer() {
     );
   }
   return (
-    <ol>
+    <div>
       {hits.map(h => (
-        <li key={h.objectID}>
-          <h2>{h.name}</h2>
-          <div>
-            <img src={h.image_url} />
-            <p>{h.stars_count} ⭐️⭐️⭐️★★ ({h.reviews_count} reviews)</p>
-          </div>
-          <div>
-            {h.food_type}
-            {" "}|{" "}
-            {h.neighborhood}
-            {" "}|{" "}
-            {h.price_range}
-          </div>
-        </li>
+        <RestaurantCard
+          key={h.objectID}
+          name={h.name}
+          imageUrl={h.image_url}
+          averageRating={h.stars_count}
+          numOfReviews={h.reviews_count}
+          cuisine={h.food_type}
+          neighborhood={h.neighborhood}
+          priceRange={h.price_range}
+        />
       ))}
-    </ol>
+    </div>
   );
 }
 

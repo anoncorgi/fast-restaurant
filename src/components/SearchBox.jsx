@@ -1,12 +1,12 @@
 import * as React from "react";
-import { useSearchBox } from "react-instantsearch-hooks";
+import * as Algolia from "react-instantsearch-hooks";
 
 import { SearchInput } from "./SearchInput";
 
 // Much of this code is taken from the hooks demo app,
 // https://codesandbox.io/s/github/algolia/react-instantsearch/tree/v6.22.0/examples/hooks?file=/components/SearchBox.tsx
 function SearchBox(props) {
-  const { query, refine, isSearchStalled } = useSearchBox(props);
+  const { query, refine, isSearchStalled } = Algolia.useSearchBox(props);
   const [value, setValue] = React.useState(query);
   const inputRef = React.useRef();
 
