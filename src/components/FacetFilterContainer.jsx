@@ -2,26 +2,23 @@ import { FancyFacet } from "./FancyFacet";
 import { CuisineFacet } from "./CuisineFacet";
 import { LocationFacet } from "./LocationFacet";
 
-function FacetFilters() {
+function FacetFilterContainer() {
   return (
     <>
-      <Facety sectionTitle={"Fine Dining"}>
-        <FancyFacet />
-      </Facety>
-      <Facety sectionTitle={"Cuisine/Food Type"}>
+      <FacetSection sectionTitle={"Cuisine/Food Type"}>
         <CuisineFacet />
-      </Facety>
-      <Facety sectionTitle={"Rating"}>
-        <p>TODO 2</p>
-      </Facety>
-      <Facety sectionTitle={"City"}>
+      </FacetSection>
+      <FacetSection sectionTitle={"Fine Dining"}>
+        <FancyFacet />
+      </FacetSection>
+      <FacetSection sectionTitle={"City"}>
         <LocationFacet />
-      </Facety>
+      </FacetSection>
     </>
   );
 }
 
-function Facety({ sectionTitle, children }) {
+function FacetSection({ sectionTitle, children }) {
   return (
     <section className="ais-Panel">
       <div className="ais-Panel-header">{sectionTitle}</div>
@@ -30,4 +27,4 @@ function Facety({ sectionTitle, children }) {
   );
 }
 
-export { FacetFilters };
+export { FacetFilterContainer };

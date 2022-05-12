@@ -1,7 +1,7 @@
 import * as styles from "./App.module.css";
 
 import { SearchBox } from "./components/SearchBox";
-import { FacetFilters } from "./components/FacetFilters";
+import { FacetFilterContainer } from "./components/FacetFilterContainer";
 import { HitContainer } from "./components/HitContainer";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <SearchBox />
       </header>
       <div className={styles.sidebar}>
-        <FacetFilters />
+        <FacetFilterContainer />
       </div>
       <main className={styles.results}>
         <HitContainer />

@@ -2,6 +2,7 @@ import * as React from "react";
 import * as Algolia from "react-instantsearch-hooks";
 import cn from "classnames";
 
+import * as styles from "./Facet.module.css";
 import { SearchInput } from "./SearchInput";
 
 function Facet(props) {
@@ -29,22 +30,14 @@ function Facet(props) {
     <div className={cn('ais-RefinementList', props.className)}>
       {props.searchable && (
         <div className="ais-RefinementList-searchBox">
-          <SearchInput
-            inputRef={inputRef}
-            placeholder={props.searchablePlaceholder}
-            isSearchStalled={false}
+          <input
+            className={styles.simpleSearch}
+            type="text"
+            placeholder={"Search for city"}
+            ref={inputRef}
             value={query}
             onChange={(event) => {
               setQuery(event.currentTarget.value);
-            }}
-            onReset={() => {
-              setQuery('');
-            }}
-            onSubmit={() => {
-              if (items.length > 0) {
-                refine(items[0].value);
-                setQuery('');
-              }
             }}
           />
         </div>
