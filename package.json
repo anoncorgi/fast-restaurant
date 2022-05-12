@@ -1,7 +1,6 @@
 {
   "name": "fast-restaurant",
   "license": "UNLICENSED",
-  "main": "index.js",
   "engines": {
     "node": "16.x",
     "npm": "8.x"
