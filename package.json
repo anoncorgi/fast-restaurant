@@ -3,8 +3,10 @@
   "license": "UNLICENSED",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "npm run copy-static && parcel index.html",
+    "build": "parcel build index.html",
+    "postbuild": "npm run copy-static",
+    "copy-static": "cp -r public/* dist/"
   },
   "@parcel/transformer-css": {
     "cssModules": true

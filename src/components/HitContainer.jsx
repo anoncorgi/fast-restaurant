@@ -2,12 +2,15 @@ import * as Algolia from "react-instantsearch-hooks";
 import { RestaurantCard } from "./RestaurantCard";
 
 // "Hits" are the results that match the query
-function HitContainer() {
+function HitContainer({ onDeleteRestaurant }) {
   const { hits } = Algolia.useHits();
   const noResults = hits.length === 0;
   if (noResults) {
     return (
-      <p>We searched high and low, but we could&apos;nt find any restaurant that matched your query.</p>
+      <>
+        <p>We searched high and low, but we could&apos;nt find any restaurant that matched your query.</p>
+        <img src="/img/no_result.jpeg" />
+      </>
     );
   }
   return (
@@ -22,6 +25,7 @@ function HitContainer() {
           cuisine={h.food_type}
           neighborhood={h.neighborhood}
           priceRange={h.price_range}
+          onDelete={onDeleteRestaurant}
         />
       ))}
     </div>
