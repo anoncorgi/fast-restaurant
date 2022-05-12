@@ -4,7 +4,11 @@
   "private": true,
   "license": "UNLICENSED",
   "description": "Take home exercise for Algolia FE role",
-  "main": "src/index.js",
+  "main": "index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
