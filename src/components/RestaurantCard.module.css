@@ -23,18 +23,19 @@
 /* } */
 
 
-.card2 {
+.card {
   display: grid;
   grid-template-columns: 30% 1fr;
   grid-template-areas:
     "image detail"
     "rating metadata";
-   border: 1px solid rgb(245,245,250);
-   background: rgb(245,245,250,.5);
+  border: 1px solid rgb(245,245,250);
+  background: rgb(245,245,250,.5);
   border-radius: 4px;
   padding: 1.75rem 2.25rem;
   margin: 3rem;
   grid-gap: 1rem;
+  max-width: 1000px;
 }
 
 .imageContainer {
@@ -46,11 +47,13 @@
 }
 
 .rating {
+  display: flex;
+  align-items: center;
   grid-area: rating
 }
 
 .restaurantInfo {
-grid-area: detail;
+  grid-area: detail;
 }
 
 .restaurantMetadata {

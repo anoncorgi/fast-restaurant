@@ -7,10 +7,10 @@ function HitContainer({ onDeleteRestaurant }) {
   const noResults = hits.length === 0;
   if (noResults) {
     return (
-      <>
-        <p>We searched high and low, but we couldn&apos;t find any restaurant that matched your query.</p>
-        <img src="/img/no_result.jpeg" />
-      </>
+      <div style={{ margin: "5rem", width: "33rem", lineHeight: "1.5" }}>
+        <p>We searched high and low, but couldn&apos;t find any restaurant that matched your query.</p>
+        <img style={{ maxHeight: "20rem" }} src="/img/no_result.jpeg" />
+      </div>
     );
   }
   return (
@@ -23,7 +23,9 @@ function HitContainer({ onDeleteRestaurant }) {
           averageRating={h.stars_count}
           numOfReviews={h.reviews_count}
           cuisine={h.food_type}
-          neighborhood={h.neighborhood}
+          address={h.address}
+          fancy={h.dining_style === "Fine Dining"}
+          phone={h.phone_number}
           priceRange={h.price_range}
           onDelete={onDeleteRestaurant}
         />

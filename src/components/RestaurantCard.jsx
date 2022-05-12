@@ -22,65 +22,32 @@ function DeleteOption({ onClick }) {
   );
 }
 
-function RestaurantCard({
-  name,
-  imageUrl,
-  averageRating,
-  numOfReviews,
-  cuisine,
-  neighborhood,
-  priceRange,
-}) {
-  function deleteRestaurant() {
-    alert('hi');
-  }
-
-  function getRandomImg() {
-    const id = Math.round(Math.random() * 20);
-    return `/img/rest_${id}.jpeg`;
-  }
-  return <NewCard />
-
+function RestaurantCard(props) {
   return (
     <div className={styles.card}>
-      <div className={styles.imgContainer}>
-        <img src={getRandomImg()} />
-      </div>
-      <div className={styles.details}>
-        <DeleteOption onClick={deleteRestaurant} />
-        <h2>{name}</h2>
-        <p>{averageRating} ⭐️⭐️⭐️★★ ({numOfReviews} reviews)</p>
-        <p>
-          {cuisine}
-          {" "}|{" "}
-          {neighborhood}
-          {" "}|{" "}
-          {priceRange}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function NewCard() {
-  const isFancy = false;
-  return (
-    <div className={styles.card2}>
       <div className={styles.imageContainer}>
         <RestaurantStockImage />
       </div>
       <div className={styles.rating}>
-        five stars
+        <span>
+          {props.averageRating} stars
+          {" "}
+          ({props.numOfReviews} reviews)
+        </span>
       </div>
       <div className={styles.restaurantInfo}>
-        my restaurant
-        400 e 83rd st
-        (201) 123123123
+        <p><strong>{props.name}</strong></p>
+        <p>{props.address}</p>
+        <p>{props.phone}</p>
       </div>
       <div className={styles.restaurantMetadata}>
-        <span className={styles.pill}>Cuisine</span>
-        {isFancy && <span>Fancy</span>}
-        <span className={styles.priceRange}>$$$</span>
+        <span className={styles.pill}>
+          {props.cuisine}
+        </span>
+        {props.isFancy && <span>🧐</span>}
+        <span className={styles.priceRange}>
+          {props.priceRange}
+        </span>
       </div>
     </div>
   );
