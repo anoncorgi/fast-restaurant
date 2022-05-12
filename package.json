@@ -1,7 +1,6 @@
 {
   "name": "fast-restaurant",
   "license": "UNLICENSED",
-  "type": "module",
   "engines": {
     "node": "16.x",
     "npm": "8.x"
@@ -19,6 +18,7 @@
     "react-instantsearch-hooks": "6.24.3"
   },
   "devDependencies": {
-    "parcel": "2.5.0"
+    "parcel": "2.5.0",
+    "postcss-modules": "4.3.1"
   }
 }
