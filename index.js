@@ -1,1 +1,3 @@
-import "./src/index.jsx";
+import { start } from "./src/start";
+
+start();
