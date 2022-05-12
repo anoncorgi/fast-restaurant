@@ -1,6 +1,7 @@
 {
   "name": "fast-restaurant",
   "license": "UNLICENSED",
+  "type": "module",
   "engines": {
     "node": "16.x",
     "npm": "8.x"
