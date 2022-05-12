@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as Algolia from "react-instantsearch-hooks";
 
+import styles from "./SearchBox.module.css";
+
 import { SearchInput } from "./SearchInput";
 
 // Much of this code is taken from the hooks demo app,
@@ -37,9 +39,9 @@ function SearchBox(props) {
   }, [query]);
 
   return (
-    <div>
+    <div className={styles.searchBox}>
       <SearchInput
-        className={props.className}
+        className={styles.searchInput}
         placeholder="Search for restaurants"
         value={value}
         inputRef={inputRef}

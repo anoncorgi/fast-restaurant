@@ -1,3 +1,5 @@
+import styles from "./SearchInput.module.css";
+
 function SearchInput({
   className,
   placeholder,
@@ -7,18 +9,30 @@ function SearchInput({
   onReset,
 }) {
   return (
-    <>
+    <div className={cx(className, styles.searchInputWrapper)}>
       <input
-        className={className}
+        className={styles.searchInput}
         type="text"
         placeholder={placeholder}
         ref={inputRef}
         value={value}
         onChange={onChange}
       />
-      <span onClick={onReset}>𝗫</span>
-    </>
+      <span
+        className={styles.reset}
+        onClick={onReset}
+      >
+        𝗫
+      </span>
+    </div>
   );
+}
+
+// FIXME use classnames? move this to a util?
+function cx(
+  ...classNames
+) {
+  return classNames.filter(Boolean).join(' ');
 }
 
 export { SearchInput };

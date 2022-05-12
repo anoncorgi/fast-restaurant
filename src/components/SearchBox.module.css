@@ -1,0 +1,7 @@
+.searchBox {
+  display: flex;
+  background: #206784;
+}
+.searchInput {
+  flex: 1;
+}

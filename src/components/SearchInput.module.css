@@ -1,0 +1,19 @@
+.searchInputWrapper {
+  display: grid;
+  grid-template-columns: 1fr 10px;
+  margin: 1.5rem  2rem;
+}
+
+.searchInput {
+  height: 2rem;
+  padding: 0 .75rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.reset {
+  /* grid-area: 1 / 2; */
+  /* place-self: end; */
+  margin-right: 3rem;
+  place-self: center;
+}

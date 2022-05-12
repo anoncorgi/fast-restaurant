@@ -8,7 +8,6 @@
 
 .container header {
   grid-area: header;
-  background: red;
 }
 
 .container .sidebar {
