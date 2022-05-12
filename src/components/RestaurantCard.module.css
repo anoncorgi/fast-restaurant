@@ -4,7 +4,7 @@
   height: 10rem;
 }
 
-.imgContainer embed {
+.imgContainer img {
   height: 100%;
   object-position: center;
   border-top-left-radius: 4px;

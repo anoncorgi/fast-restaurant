@@ -34,11 +34,16 @@ function RestaurantCard({
   function deleteRestaurant() {
     alert('hi');
   }
+
+  function getRandomImg() {
+    const id = Math.round(Math.random() * 20);
+    return `/img/rest_${id}.jpeg`;
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>
-        {/* Use different service to get images, since the OpenTable API always returns the same placeholder */}
-        <embed src="https://img-placeholder.herokuapp.com/restaurant?w=200&h=200&fit=crop" />
+        <img src={getRandomImg()} />
       </div>
       <div className={styles.details}>
         <DeleteOption onClick={deleteRestaurant} />
