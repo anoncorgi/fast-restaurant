@@ -4,7 +4,7 @@ import { SearchBox } from "./components/SearchBox";
 import { FacetFilterContainer } from "./components/FacetFilterContainer";
 import { HitContainer } from "./components/HitContainer";
 
-function App() {
+function App({ onDelete }) {
   return (
     <div className={styles.container}>
       <header>
@@ -14,7 +14,7 @@ function App() {
         <FacetFilterContainer />
       </div>
       <main className={styles.results}>
-        <HitContainer />
+        <HitContainer onDelete={onDelete} />
       </main>
     </div>
   );

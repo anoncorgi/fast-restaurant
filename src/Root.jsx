@@ -1,10 +1,22 @@
 import { InstantSearch } from "react-instantsearch-hooks";
-import algoliasearch from "algoliasearch/lite";
+import algoliasearch from "algoliasearch";
 
 import { App } from "./App";
 
 function Root() {
   const searchClient = configureAlgoliaSearch();
+  const index = searchClient.initIndex();
+  console.log(index);
+
+  function handleDelete(name, id) {
+    const result = confirm(`Are you sure you want to delete "${name}"?`);
+    console.log({ name, id })
+    if (result) {
+      index.deleteObject(id)
+        .then(() => confirm('The restaurant has been deleted.'));
+    }
+  }
+
   const indexName = process.env.ALGOLIA_INDEX_NAME;
   return (
     <InstantSearch
@@ -12,7 +24,7 @@ function Root() {
       indexName={indexName}
       routing={true}
     >
-      <App />
+      <App onDelete={handleDelete} />
     </InstantSearch>
   );
 }

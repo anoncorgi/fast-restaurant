@@ -4,7 +4,7 @@ import { RestaurantCard } from "./RestaurantCard";
 import cn from "classnames";
 
 // "Hits" are the results that match the query
-function HitContainer({ onDeleteRestaurant }) {
+function HitContainer({ onDelete }) {
   const {
     hits,
     isLastPage,
@@ -16,6 +16,7 @@ function HitContainer({ onDeleteRestaurant }) {
       {hits.map((h) => (
         <RestaurantCard
           key={h.objectID}
+          id={h.objectID}
           name={h.name}
           imageUrl={h.image_url}
           averageRating={h.stars_count}
@@ -25,7 +26,7 @@ function HitContainer({ onDeleteRestaurant }) {
           isFancy={h.dining_style === "Fine Dining"}
           phone={h.phone_number}
           priceRange={h.price_range}
-          onDelete={onDeleteRestaurant}
+          onDelete={onDelete}
         />
       ))}
       <button

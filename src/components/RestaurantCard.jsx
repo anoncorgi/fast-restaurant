@@ -1,28 +1,10 @@
 import * as React from "react";
-import { DeleteOutlined } from '@ant-design/icons';
+import { DeleteTwoTone } from '@ant-design/icons';
 
 import * as styles from "./RestaurantCard.module.css";
 
-function DeleteOption({ onClick }) {
-  const [delConfirmationActive, setDelConfirmation] = React.useState(false);
-  const showDelConfirmation = () => setDelConfirmation(true);
-  const hideDelConfirmation = () => setDelConfirmation(false);
+function RestaurantCard({ onDelete, ...h }) {
 
-  if (delConfirmationActive) {
-    return (
-      <span>
-        <a href="" onClick={hideDelConfirmation}>Cancel</a>
-        <button onClick={onClick}>Confirm Delete</button>
-      </span>
-    );
-  }
-
-  return (
-    <DeleteOutlined onClick={showDelConfirmation} />
-  );
-}
-
-function RestaurantCard(props) {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -30,23 +12,26 @@ function RestaurantCard(props) {
       </div>
       <div className={styles.rating}>
         <span>
-          {props.averageRating} stars
+          {h.averageRating} stars
           {" "}
-          ({props.numOfReviews} reviews)
+          ({h.numOfReviews} reviews)
         </span>
       </div>
       <div className={styles.restaurantInfo}>
-        <p><strong>{props.name}</strong></p>
-        <p>{props.address}</p>
-        <p>{props.phone}</p>
+        <div className={styles.restaurantName}>
+          <strong>{h.name}</strong>
+          <DeleteTwoTone onClick={() => onDelete(h.name, h.id)} />
+        </div>
+        <p>{h.address}</p>
+        <p>{h.phone}</p>
       </div>
       <div className={styles.restaurantMetadata}>
         <span className={styles.pill}>
-          {props.cuisine}
+          {h.cuisine}
         </span>
-        {props.isFancy && <h1 title="This location is fancy">🧐</h1>}
+        {h.isFancy && <h1 title="This location is fancy">🧐</h1>}
         <span className={styles.priceRange}>
-          {props.priceRange}
+          {h.priceRange}
         </span>
       </div>
     </div>

@@ -32,6 +32,15 @@
   grid-area: detail;
 }
 
+.restaurantName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.restaurantName svg {
+  cursor: pointer;
+}
+
 .restaurantMetadata {
   grid-area: metadata;
   display: flex;
