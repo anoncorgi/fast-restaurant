@@ -1,9 +1,6 @@
 {
-  "name": "algolia-test",
-  "author": "James Drury",
-  "private": true,
+  "name": "fast-restaurant",
   "license": "UNLICENSED",
-  "description": "Take home exercise for Algolia FE role",
   "main": "index.js",
   "engines": {
     "node": "16.x",
@@ -15,7 +12,7 @@
   },
   "dependencies": {
     "algoliasearch": "4.13.0",
-    "classnames": "^2.3.1",
+    "classnames": "2.3.1",
     "instantsearch.js": "4.40.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",
