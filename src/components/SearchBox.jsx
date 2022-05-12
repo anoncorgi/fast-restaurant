@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Algolia from "react-instantsearch-hooks";
 
-import styles from "./SearchBox.module.css";
+import * as styles from "./SearchBox.module.css";
 
 import { SearchInput } from "./SearchInput";
 

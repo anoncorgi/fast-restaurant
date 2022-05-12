@@ -1,4 +1,4 @@
-import styles from "./RestaurantCard.module.css";
+import * as styles from "./RestaurantCard.module.css";
 
 function RestaurantCard({
   name,

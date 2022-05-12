@@ -1,4 +1,4 @@
-import styles from "./App.module.css";
+import * as styles from "./App.module.css";
 
 import { SearchBox } from "./components/SearchBox";
 import { FacetFilters } from "./components/FacetFilters";

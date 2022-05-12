@@ -1,6 +1,6 @@
 import cn from "classnames";
 
-import styles from "./SearchInput.module.css";
+import * as styles from "./SearchInput.module.css";
 
 function SearchInput({
   className,
