@@ -2,6 +2,7 @@ import algoliasearch from "algoliasearch/lite";
 import { InstantSearch } from "react-instantsearch-hooks";
 
 import { SearchBox } from "./components/SearchBox";
+import { HitContainer } from "./components/HitContainer";
 
 const {
   ALGOLIA_APP_ID,
@@ -21,6 +22,7 @@ function App() {
       indexName={ALGOLIA_INDEX_NAME}
     >
       <SearchBox />
+      <HitContainer />
     </InstantSearch>
   );
 }
