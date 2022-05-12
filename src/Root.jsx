@@ -5,15 +5,16 @@ import { App } from "./App";
 
 function Root() {
   const searchClient = configureAlgoliaSearch();
-  const index = searchClient.initIndex();
-  console.log(index);
+  const index = searchClient.initIndex(process.env.ALGOLIA_INDEX_NAME);
 
   function handleDelete(name, id) {
     const result = confirm(`Are you sure you want to delete "${name}"?`);
     console.log({ name, id })
     if (result) {
       index.deleteObject(id)
-        .then(() => confirm('The restaurant has been deleted.'));
+        .then((res) => {
+          confirm('Your delete request has been successfully processed. It may take a few minutes to complete.');
+        });
     }
   }
 
