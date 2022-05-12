@@ -12,7 +12,8 @@ function RestaurantCard({
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>
-        <img src={imageUrl} />
+        {/* Use different service to get images, since the OpenTable API always returns the same placeholder */}
+        <embed src="https://img-placeholder.herokuapp.com/restaurant?w=200&h=200&fit=crop" />
       </div>
       <div className={styles.details}>
         <h2>{name}</h2>
