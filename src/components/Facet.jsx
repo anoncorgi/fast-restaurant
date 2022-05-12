@@ -9,7 +9,14 @@ function Facet(props) {
   const previousQueryRef = React.useRef(query);
   const inputRef = React.useRef(null);
 
-  const { items, refine, searchForItems } = Algolia.useRefinementList(props);
+  const {
+    items,
+    refine,
+    searchForItems,
+    isShowingMore,
+    toggleShowMore,
+    canToggleShowMore,
+  } = Algolia.useRefinementList(props);
 
   React.useEffect(() => {
     if (previousQueryRef.current !== query) {
@@ -75,6 +82,17 @@ function Facet(props) {
           </li>
         ))}
       </ul>
+      {props.showMore && (
+        <button
+          className={cn('ais-RefinementList-showMore', {
+            'ais-RefinementList-showMore--disabled': !canToggleShowMore,
+          })}
+          disabled={!canToggleShowMore}
+          onClick={toggleShowMore}
+        >
+          {isShowingMore ? 'Show less' : 'Show more'}
+        </button>
+      )}
     </div>
   );
 }

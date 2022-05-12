@@ -4,6 +4,7 @@ function LocationFacet() {
   return (
     <Facet
       searchable
+      showMore
       attribute={"city"}
     />
   );

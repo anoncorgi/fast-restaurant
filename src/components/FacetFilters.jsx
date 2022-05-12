@@ -1,9 +1,13 @@
+import { FancyFacet } from "./FancyFacet";
 import { CuisineFacet } from "./CuisineFacet";
 import { LocationFacet } from "./LocationFacet";
 
 function FacetFilters() {
   return (
     <>
+      <Facety sectionTitle={"Fine Dining"}>
+        <FancyFacet />
+      </Facety>
       <Facety sectionTitle={"Cuisine/Food Type"}>
         <CuisineFacet />
       </Facety>
