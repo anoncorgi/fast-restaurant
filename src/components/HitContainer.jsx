@@ -8,7 +8,7 @@ function HitContainer({ onDeleteRestaurant }) {
   if (noResults) {
     return (
       <>
-        <p>We searched high and low, but we could&apos;nt find any restaurant that matched your query.</p>
+        <p>We searched high and low, but we couldn&apos;t find any restaurant that matched your query.</p>
         <img src="/img/no_result.jpeg" />
       </>
     );
