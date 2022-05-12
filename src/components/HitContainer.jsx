@@ -7,22 +7,9 @@ import cn from "classnames";
 function HitContainer({ onDeleteRestaurant }) {
   const {
     hits,
-    // isFirstPage,
     isLastPage,
     showMore,
-    // showPrevious,
   } = Algolia.useInfiniteHits();
-
-  const noResults = hits.length === 0;
-
-  if (noResults) {
-    return (
-      <div style={{ margin: "5rem", width: "33rem", lineHeight: "1.5" }}>
-        <p>We searched high and low, but couldn&apos;t find any restaurant that matched your query.</p>
-        <img style={{ maxHeight: "20rem" }} src="/img/no_result.jpeg" />
-      </div>
-    );
-  }
 
   return (
     <>
