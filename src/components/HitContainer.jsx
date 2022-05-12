@@ -12,8 +12,19 @@ function HitContainer() {
   return (
     <ol>
       {hits.map(h => (
-        <li>
-          {h.name}
+        <li key={h.objectID}>
+          <h2>{h.name}</h2>
+          <div>
+            <img src={h.image_url} />
+            <p>{h.stars_count} ⭐️⭐️⭐️★★ ({h.reviews_count} reviews)</p>
+          </div>
+          <div>
+            {h.food_type}
+            {" "}|{" "}
+            {h.neighborhood}
+            {" "}|{" "}
+            {h.price_range}
+          </div>
         </li>
       ))}
     </ol>
