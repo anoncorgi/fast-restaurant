@@ -1,23 +1,75 @@
-.card {
-  margin: 2rem;
-  display: flex;
-  height: 10rem;
+/* .card { */
+/*   margin: 2rem; */
+/*   display: flex; */
+/*   height: 10rem; */
+/* } */
+
+/* .imgContainer img { */
+/*   height: 100%; */
+/*   object-position: center; */
+/*   border-top-left-radius: 4px; */
+/*   border-bottom-left-radius: 4px; */
+/* } */
+
+/* .details { */
+/*   display: flex; */
+/*   flex-basis: 80%; */
+/*   flex-direction: column; */
+/*   justify-content: center; */
+/*   padding: 0 1.5rem; */
+/*   border: 1px solid #ededed; */
+/*   border-top-right-radius: .5rem; */
+/*   border-bottom-right-radius: .5rem; */
+/* } */
+
+
+.card2 {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-template-areas:
+    "image detail"
+    "rating metadata";
+   border: 1px solid rgb(245,245,250);
+   background: rgb(245,245,250,.5);
+  border-radius: 4px;
+  padding: 1.75rem 2.25rem;
+  margin: 3rem;
+  grid-gap: 1rem;
 }
 
-.imgContainer img {
-  height: 100%;
-  object-position: center;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+.imageContainer {
+  grid-area: image;
 }
 
-.details {
-  display: flex;
-  flex-basis: 80%;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 1.5rem;
-  border: 1px solid #ededed;
-  border-top-right-radius: .5rem;
-  border-bottom-right-radius: .5rem;
+.imageContainer img {
+  border-radius: 4px;
 }
+
+.rating {
+  grid-area: rating
+}
+
+.restaurantInfo {
+grid-area: detail;
+}
+
+.restaurantMetadata {
+  grid-area: metadata;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pill {
+  color: #3C4FE0;
+  background-color: rgba(84,104,244,.1);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.priceRange {
+  color: #008080;
+}
+

@@ -39,6 +39,7 @@ function RestaurantCard({
     const id = Math.round(Math.random() * 20);
     return `/img/rest_${id}.jpeg`;
   }
+  return <NewCard />
 
   return (
     <div className={styles.card}>
@@ -58,6 +59,40 @@ function RestaurantCard({
         </p>
       </div>
     </div>
+  );
+}
+
+function NewCard() {
+  const isFancy = false;
+  return (
+    <div className={styles.card2}>
+      <div className={styles.imageContainer}>
+        <RestaurantStockImage />
+      </div>
+      <div className={styles.rating}>
+        five stars
+      </div>
+      <div className={styles.restaurantInfo}>
+        my restaurant
+        400 e 83rd st
+        (201) 123123123
+      </div>
+      <div className={styles.restaurantMetadata}>
+        <span className={styles.pill}>Cuisine</span>
+        {isFancy && <span>Fancy</span>}
+        <span className={styles.priceRange}>$$$</span>
+      </div>
+    </div>
+  );
+}
+
+function RestaurantStockImage() {
+  function getRandomImg() {
+    const id = Math.round(Math.random() * 20);
+    return `/img/rest_${id}.jpeg`;
+  }
+  return (
+    <img src={getRandomImg()} />
   );
 }
 
