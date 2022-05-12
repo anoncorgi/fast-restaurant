@@ -12,7 +12,8 @@
 
 .container .sidebar {
   grid-area: sidebar;
-  background: blue;
+  padding: 1.5rem 1.25rem;
+  border-right: .1rem solid #ccc;
 }
 
 .container .results {
