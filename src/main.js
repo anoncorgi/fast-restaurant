@@ -1,15 +1,15 @@
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import { Root } from "./Root";
 
 function createAndAppendRootNode() {
-  const node = document.createElement("main");
-  document.body.append(node);
+  const node = document.createElement("div");
+  document.body.prepend(node);
   return node;
 }
 
 function initApplication(node) {
   const root = createRoot(node);
-  root.render(<App />);
+  root.render(<Root />);
 }
 
 export { createAndAppendRootNode, initApplication };
