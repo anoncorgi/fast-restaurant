@@ -1,10 +1,20 @@
 import * as Algolia from "react-instantsearch-hooks";
 import { RestaurantCard } from "./RestaurantCard";
 
+import cn from "classnames";
+
 // "Hits" are the results that match the query
 function HitContainer({ onDeleteRestaurant }) {
-  const { hits } = Algolia.useHits();
+  const {
+    hits,
+    // isFirstPage,
+    isLastPage,
+    showMore,
+    // showPrevious,
+  } = Algolia.useInfiniteHits();
+
   const noResults = hits.length === 0;
+
   if (noResults) {
     return (
       <div style={{ margin: "5rem", width: "33rem", lineHeight: "1.5" }}>
@@ -13,9 +23,10 @@ function HitContainer({ onDeleteRestaurant }) {
       </div>
     );
   }
+
   return (
-    <div>
-      {hits.map(h => (
+    <>
+      {hits.map((h) => (
         <RestaurantCard
           key={h.objectID}
           name={h.name}
@@ -24,13 +35,23 @@ function HitContainer({ onDeleteRestaurant }) {
           numOfReviews={h.reviews_count}
           cuisine={h.food_type}
           address={h.address}
-          fancy={h.dining_style === "Fine Dining"}
+          isFancy={h.dining_style === "Fine Dining"}
           phone={h.phone_number}
           priceRange={h.price_range}
           onDelete={onDeleteRestaurant}
         />
       ))}
-    </div>
+      <button
+        className={cn('ais-InfiniteHits-loadMore', {
+          'ais-InfiniteHits-loadMore--disabled': isLastPage
+        })}
+        onClick={showMore}
+        disabled={isLastPage}
+      >
+        Show more results
+      </button>
+
+    </>
   );
 }
 

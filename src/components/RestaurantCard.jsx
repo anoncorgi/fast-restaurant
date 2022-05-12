@@ -44,7 +44,7 @@ function RestaurantCard(props) {
         <span className={styles.pill}>
           {props.cuisine}
         </span>
-        {props.isFancy && <span>🧐</span>}
+        {props.isFancy && <h1 title="This location is fancy">🧐</h1>}
         <span className={styles.priceRange}>
           {props.priceRange}
         </span>
