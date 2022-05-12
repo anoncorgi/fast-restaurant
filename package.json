@@ -1,13 +1,13 @@
 {
   "name": "algolia-test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "James Drury",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Take home exercise for Algolia FE role",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "algoliasearch": "^4.13.0",
     "instantsearch.js": "^4.40.5",
